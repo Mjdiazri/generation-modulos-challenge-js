@@ -46,7 +46,7 @@ class NuevoCarrito{
             }       
         }
 
-        console.log(`\nTotal factura:------------ ${this.total()}`)
+        console.log(`\nTotal factura:------------ ${formatearPrecio(this.total())}`)
         console.log("---------------------------------\n")
     }
 }
