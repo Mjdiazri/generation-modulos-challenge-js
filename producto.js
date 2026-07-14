@@ -7,7 +7,8 @@ class Producto{
     }
 
     hayStock(cantidad){
-        return ((cantidad) => cantidad => stock ? true : false)(this.stock);
+        return ((cantidad <= this.stock ? true : false));
+        
     }
 
     ficha(){

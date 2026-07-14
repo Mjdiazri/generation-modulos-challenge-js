@@ -10,4 +10,4 @@ function calcularDescuento(precio, porcentaje){
     return precio-(precio*porcentaje);
 }
 
-export default{formatearPrecio, esEmailValido, calcularDescuento}
+module.exports = {formatearPrecio, esEmailValido, calcularDescuento};
