@@ -20,8 +20,8 @@ class NuevoCarrito{
     subtotal(){
         let suma =0;
         for (const item of this.items) {
-            suma += item.producto.precio * item.cantidad         
-        }
+            suma += item.producto.precio * item.cantidad        
+        }        
         return suma;
     }
 
@@ -39,7 +39,7 @@ class NuevoCarrito{
         let precioDescuento = 0;
         for (let i = 0; i < this.items.length; i ++) {
             if(this.usuario.esVIP === true){
-                precioDescuento = calcularDescuento(this.items[i].producto.precio, 0.10);
+                precioDescuento = calcularDescuento(this.items[i].producto.precio, 0.10)* this.items[i].cantidad;
                 console.log(`${this.items[i].producto.nombre}    ${this.items[i].cantidad}    ${formatearPrecio(precioDescuento)}`)
             }else {
                 console.log(`${this.items[i].producto}    ${this.items[i].cantidad}    ${formatearPrecio(this.items[i].producto.precio)}`)

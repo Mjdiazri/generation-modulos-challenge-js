@@ -9,8 +9,8 @@ const nuevoUsuario = new Usuario("Angely Ballesteros", "aballesteros@gmail.com",
 console.log(`\nEl email es valido? ${esEmailValido(nuevoUsuario.email)} \n\n`)
 
 //Creacion productos
-const producto1 = new Producto("Leche", 10000, "lacteos", 2);
-const producto2 = new Producto("Arroz", 10000, "granos", 1);
+const producto1 = new Producto("pinguina", 3000, "ave", 3);
+const producto2 = new Producto("caballo", 10000, "equino", 4);
 
 //Agregar carrito
 console.log("\n---- Agregando Productos al Carrito ----\n")
