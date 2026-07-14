@@ -20,32 +20,34 @@ class NuevoCarrito{
     subtotal(){
         let suma =0;
         for (const item of this.items) {
-            suma += item.producto.precio * item.cantidad            
+            suma += item.producto.precio * item.cantidad         
         }
         return suma;
     }
 
     total(){
         let subtotal = this.subtotal();
-        if(this.usuario.esVIP()){
+        if(this.usuario.esVIP === true){
             return calcularDescuento(subtotal, 0.10);
         }
         return subtotal;
     }
 
     recibo(){
-        console.log(`******** RECIBO DE PAGO ******** \n ${this.usuario.saludo()}, este es tu recibo de compra: `)
+        console.log("\n\n---------------------------------")
+        console.log(`******** RECIBO DE PAGO ******** \n\n${this.usuario.saludo()}, esta es tu factura: \n`)
         let precioDescuento = 0;
         for (let i = 0; i < this.items.length; i ++) {
-            if(this.usuario.esVIP()){
+            if(this.usuario.esVIP === true){
                 precioDescuento = calcularDescuento(this.items[i].producto.precio, 0.10);
-                console.log(`${this.items[i].producto}    ${this.items[i].cantidad}    ${formatearPrecio(precioDescuento)}`)
+                console.log(`${this.items[i].producto.nombre}    ${this.items[i].cantidad}    ${formatearPrecio(precioDescuento)}`)
             }else {
                 console.log(`${this.items[i].producto}    ${this.items[i].cantidad}    ${formatearPrecio(this.items[i].producto.precio)}`)
             }       
         }
 
         console.log(`\nTotal factura:------------ ${this.total()}`)
+        console.log("---------------------------------\n")
     }
 }
 
